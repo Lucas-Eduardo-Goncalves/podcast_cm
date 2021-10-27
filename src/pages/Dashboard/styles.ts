@@ -15,6 +15,15 @@ export const Container = styled.div`
     width: 100%;
     max-width: unset;
   }
+
+  @media(max-width: 425px) {
+
+    padding: 1rem;
+    h2{
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+    }
+  }
 `;
 
 export const LatestEpisodes = styled.div`
@@ -123,6 +132,24 @@ export const LatestEpisodes = styled.div`
     div {
       img {
         display: none;
+      }
+    }
+  }
+
+  @media (max-width: 425px) {
+    div div h3 {
+      font-size: 0.9rem;
+    }
+
+    div {
+      padding: 0.5rem;
+
+      div {
+        margin-left: unset;
+
+        span {
+          display: none;
+        }
       }
     }
   }

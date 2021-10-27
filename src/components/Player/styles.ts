@@ -8,15 +8,8 @@ export const ContainerLittle = styled.div`
   height: 5rem;
   gap: 0.5rem;
 
- 
-
-
   background: var(--blue);
   color: #fff;
-
-  @media(min-width: 900px) {
-    display: none;
-  }
 
   .button {
     background: transparent;
@@ -36,6 +29,20 @@ export const ContainerLittle = styled.div`
 
     &:hover {
       background: ${lighten(0.2 ,'#1565c0')};
+    }
+  }
+
+  @media(min-width: 900px) {
+    display: none;
+  }
+
+  @media(max-width: 425px) {
+    .disabledImgGroup {
+      display: none;
+    }
+
+    .button {
+      margin-right: auto;
     }
   }
 `
@@ -138,6 +145,14 @@ export const CurrentEpisode = styled.div`
     opacity: 0.6;
     font: 400 0.8rem Roboto, sans-serif;
     line-height: 1rem;
+  }
+
+  @media(max-width: 425px) {
+    img {
+      border-radius: 1rem;
+      height: 12rem;
+      width: 12rem;
+    }
   }
 `;
 

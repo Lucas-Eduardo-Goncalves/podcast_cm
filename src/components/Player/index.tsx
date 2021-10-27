@@ -100,24 +100,15 @@ export const Player: React.FC = () => {
           <button onClick={toggleActive} className="button">
             <Icons.ChevronUp />
           </button>
-          <Progress>
-            <span>{convertDurationToTimeString(progress)}</span>
-            <div className='slider'>
-              {episode ? (
-                <Slider
-                  max={episode.file.duration}
-                  value={progress}
-                  onChange={handleSeek}
-                  trackStyle={{ backgroundColor: '#ff6700' }}
-                  railStyle={{ backgroundColor: '#1976d2' }}
-                  handleStyle={{ borderColor: '#ff6700', borderWidth: 4 }}
-                />
-              ) : (
-                <div className='emptySlider' />
-              )}
-            </div>
-            <span>{convertDurationToTimeString(episode?.file.duration ?? 0)}</span>
-          </Progress>
+
+          <ImgGroup className="disabledImgGroup">
+            <img src={headphone} alt="" />
+
+            {isPlaying
+                ? <p>Tocando agora</p>
+                : <p>Selecione um audio</p>
+              }
+          </ImgGroup>
 
           <ButtonSecondary
               type="button" 
