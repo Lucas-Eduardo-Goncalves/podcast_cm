@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { usePlayer } from '../../contexts/PlayerContext';
-import { api } from '../../services/api';
 
 import { PlayingCss } from '../../components/PlayingCss';
 
-import { Container, LatestEpisodes } from './styles';
+import { Container, LatestEpisodes, AllEpisodes } from './styles';
 
 import * as Icons from '../../icons';
+import { useCollection } from '@nandorojo/swr-firestore';
 
 type Episode = {
   id: string,      
@@ -24,13 +24,10 @@ type Episode = {
 
 export const Dashboard: React.FC = () => {
 
-  const [episodesArray, setEpisodesArray] = useState<Episode[]>();
-
-  useEffect(() => {
-    api.get('episodes').then(response => setEpisodesArray(response.data))
-  },[])
+  const { data: episodesArray } = useCollection<Episode>('Podcasts', {listen: true}); 
 
   const latestEpisodes = episodesArray?.slice(0, 2);
+  const allEpisodes = episodesArray?.slice(2, episodesArray?.length);
 
   const { playList, currentEpisodeIndex, isPlaying } = usePlayer()
 
@@ -71,7 +68,59 @@ export const Dashboard: React.FC = () => {
             )
           })}
       </LatestEpisodes>
-      <PlayingCss />
+
+      <AllEpisodes>
+        <h2>Todos episódios</h2>
+
+        <table cellSpacing={0}>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Podcast</th>
+              <th className="disabledWidth">Integrantes</th>
+              
+              <th className="disabledWidth2">Duração</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {allEpisodes?.map((episode, index) => {
+              return (
+                <tr key={episode.id}>
+                  <td style={{ width: 72 }}>
+                    <img
+                      width={120}
+                      height={120}
+                      src={episode.thumbnail}
+                      alt={episode.title}
+                    />
+                  </td>
+                  <td>
+                    {episode.title}
+                  </td>
+                  <td className="disabledWidth">{episode.members}</td>
+                  <td className="disabledWidth2">{episode.file.duration}</td>
+                  <td>
+                    <button type="button" onClick={() => episodesArray &&  playList(episodesArray, index + 2)}>
+                      {isPlaying ? (
+                        <>
+                        {currentEpisodeIndex === index + 2 ? (
+                          <PlayingCss />
+                        ) : (
+                          <Icons.Play />
+                        )}
+                        </>
+                      ) : (
+                        <Icons.Play />
+                      )}
+                    </button>
+                  </td>
+                </tr>
+              )
+            })}
+          </tbody>
+        </table>
+      </AllEpisodes>
     </Container>
   );
 }

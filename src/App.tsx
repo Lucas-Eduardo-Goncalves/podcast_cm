@@ -7,20 +7,29 @@ import { PlayerContextProvider } from './contexts/PlayerContext';
 
 import { Dashboard } from './pages/Dashboard';
 
+import { FuegoProvider } from '@nandorojo/swr-firestore'
+import Fuego from './services/swr-firebase';
+import { firebaseConfig } from './services/firebase';
+
 export const App: React.FC = () => {
+
+  const fuego = new Fuego(firebaseConfig);
+
   return (
     <div id="unitTagGlobal">
-      <PlayerContextProvider>
-        <GlobalStyle />
+      <FuegoProvider fuego={fuego}>
+        <PlayerContextProvider>
+          <GlobalStyle />
 
-        <div id="unitTagGlobalUnit">
-          <Header />
-          
-          <Dashboard />
-        <Player/>
-        </div>
+          <div id="unitTagGlobalUnit">
+            <Header />
 
-      </PlayerContextProvider>
+            <Dashboard />
+            <Player/>
+          </div>
+
+        </PlayerContextProvider>
+      </FuegoProvider>
     </div>
   );
 }
