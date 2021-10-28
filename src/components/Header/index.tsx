@@ -3,6 +3,8 @@ import React from 'react';
 import format from 'date-fns/format';
 import ptBR from 'date-fns/locale/pt-BR';
 
+import { useLocation } from 'react-router-dom';
+
 import logo from '../../assets/logo.svg'
 
 import { Container, AreaLimiter, Logo, TextHeader } from './styles';
@@ -13,8 +15,12 @@ export const Header: React.FC = () => {
     locale: ptBR,
   });
 
+  const location = useLocation();
+
   return (
-    <Container>
+    <>
+    {location.pathname !== '/' && (
+      <Container>
       <AreaLimiter>
         <Logo>
           <img src={logo} alt="Pocketcast" />   
@@ -28,5 +34,7 @@ export const Header: React.FC = () => {
         <span>{currentDate}</span>
       </AreaLimiter>
     </Container>
+    )}
+  </>
   );
 }

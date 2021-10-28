@@ -10,12 +10,15 @@ import { convertDurationToTimeString } from '../../utils/convertDurationToTimeSt
 
 import { Container, ImgGroup, Footer, ButtonMain, ButtonSecondary, CurrentEpisode, Progress, ContainerLittle } from './styles';
 import * as Icons from '../../icons';
+import { useLocation } from 'react-router-dom';
 
 export const Player: React.FC = () => {
 
   const audioRef = useRef<HTMLAudioElement>(null);
   
   const [progress, setProgress] = useState(0);
+
+  const location = useLocation();
 
   const { 
     episodeList, 
@@ -82,6 +85,8 @@ export const Player: React.FC = () => {
 
   return (
     <>
+    {location.pathname !== '/' && (
+      <>
       { episode && (
         <audio 
           src={episode.file.url}
@@ -326,6 +331,8 @@ export const Player: React.FC = () => {
           </div>
         </Footer>
       </Container>   
+    </>
+    )}
     </>
   );
 }

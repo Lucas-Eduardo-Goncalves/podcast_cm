@@ -1,15 +1,18 @@
 import React from 'react';
 import GlobalStyle from './styles';
+import { BrowserRouter } from 'react-router-dom';
 
 import { Header } from './components/Header';
 import { Player } from './components/Player';
 import { PlayerContextProvider } from './contexts/PlayerContext';
 
-import { Dashboard } from './pages/Dashboard';
-
 import { FuegoProvider } from '@nandorojo/swr-firestore'
 import Fuego from './services/swr-firebase';
 import { firebaseConfig } from './services/firebase';
+
+import { AuthContextProvider } from './hooks/useAuth';
+
+import { Routes } from './routes';
 
 export const App: React.FC = () => {
 
@@ -18,17 +21,20 @@ export const App: React.FC = () => {
   return (
     <div id="unitTagGlobal">
       <FuegoProvider fuego={fuego}>
-        <PlayerContextProvider>
-          <GlobalStyle />
+        <BrowserRouter>
+          <PlayerContextProvider>
+            <AuthContextProvider>
+            <GlobalStyle />
+            <div id="unitTagGlobalUnit">
+              <Header />       
 
-          <div id="unitTagGlobalUnit">
-            <Header />
+              <Routes />
+              <Player />         
+            </div>
 
-            <Dashboard />
-            <Player/>
-          </div>
-
+          </AuthContextProvider>
         </PlayerContextProvider>
+        </BrowserRouter>
       </FuegoProvider>
     </div>
   );

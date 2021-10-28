@@ -1,12 +1,13 @@
 import React from 'react';
-import { usePlayer } from '../../contexts/PlayerContext';
 
+import { usePlayer } from '../../contexts/PlayerContext';
 import { PlayingCss } from '../../components/PlayingCss';
 
 import { Container, LatestEpisodes, AllEpisodes } from './styles';
 
 import * as Icons from '../../icons';
 import { useCollection } from '@nandorojo/swr-firestore';
+import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString';
 
 type Episode = {
   id: string,      
@@ -48,7 +49,7 @@ export const Dashboard: React.FC = () => {
                   
                   <p>{episode.members}</p>
                   <span>{episode.published_at}</span>
-                  <span>{episode.file.duration}</span>
+                  <span>{convertDurationToTimeString(episode.file.duration)}</span>
                 </div>
 
                 <button type="button" onClick={() => episodesArray && playList(episodesArray, index)}>

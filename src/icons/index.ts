@@ -1,5 +1,5 @@
-import { FaRandom } from 'react-icons/fa';
-import { BsFillSkipEndFill, BsFillSkipStartFill, BsFillPlayFill, BsPauseFill, BsChevronDown, BsChevronUp } from 'react-icons/bs';
+import { FaRandom, FaGoogle, FaFacebookF } from 'react-icons/fa';
+import { BsFillSkipEndFill, BsFillSkipStartFill, BsFillPlayFill, BsPauseFill, BsChevronDown, BsChevronUp, BsChevronRight } from 'react-icons/bs';
 import { TiArrowLoop } from 'react-icons/ti';
 
 export {
@@ -10,5 +10,8 @@ export {
   BsPauseFill as Pause,
   TiArrowLoop as Loop,
   BsChevronDown as ChevronDown,
-  BsChevronUp as ChevronUp
+  BsChevronUp as ChevronUp,
+  FaGoogle as Google,
+  FaFacebookF as Facebook,
+  BsChevronRight as ChevronRight,
 }
