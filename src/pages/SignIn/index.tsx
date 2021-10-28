@@ -14,11 +14,11 @@ export const SignIn: React.FC = () => {
 
   const history = useHistory();
 
-  // useEffect(() => {
-  //   if (user !== undefined) {
-  //     history.push('/home')
-  //   } 
-  // },[user, history])
+  useEffect(() => {
+    if (user !== undefined) {
+      history.push('/home')
+    } 
+  },[user, history])
   
   return (
     <Container>
