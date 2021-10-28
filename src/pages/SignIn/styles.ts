@@ -87,16 +87,14 @@ export const Main = styled.main`
   align-items: center;
   justify-content: center;
 
-  padding: 6rem 2rem;
+  padding: 2rem;
 
   > div {
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    height: 100%;
     width: 100%;
-    
     max-width: 450px;
 
     > div {
@@ -181,6 +179,26 @@ export const Main = styled.main`
       &:hover {
         filter: brightness(0.85);
         padding: 1rem;
+      }
+    }
+  }
+
+  @media (max-width: 750px) {
+    div section button {
+      height: 3rem;
+      font-size: 1rem;
+       
+      svg {
+        font-size: 1.5rem;
+      }
+    }
+
+    div button {
+      height: 3rem;
+      font-size: 1rem;
+       
+      svg {
+        font-size: 1.5rem;
       }
     }
   }

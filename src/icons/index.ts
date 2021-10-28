@@ -1,5 +1,5 @@
 import { FaRandom, FaGoogle, FaFacebookF } from 'react-icons/fa';
-import { BsFillSkipEndFill, BsFillSkipStartFill, BsFillPlayFill, BsPauseFill, BsChevronDown, BsChevronUp, BsChevronRight } from 'react-icons/bs';
+import { BsFillSkipEndFill, BsFillSkipStartFill, BsChevronLeft, BsFillPlayFill, BsPauseFill, BsChevronDown, BsChevronUp, BsChevronRight } from 'react-icons/bs';
 import { TiArrowLoop } from 'react-icons/ti';
 
 export {
@@ -14,4 +14,5 @@ export {
   FaGoogle as Google,
   FaFacebookF as Facebook,
   BsChevronRight as ChevronRight,
+  BsChevronLeft as ChevronLeft
 }

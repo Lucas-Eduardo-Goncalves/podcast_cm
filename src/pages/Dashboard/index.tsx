@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { usePlayer } from '../../contexts/PlayerContext';
 import { PlayingCss } from '../../components/PlayingCss';
@@ -45,7 +46,7 @@ export const Dashboard: React.FC = () => {
                 <img src={episode.thumbnail} alt={episode.title} />
 
                 <div>
-                  <h3>{episode.title}</h3>
+                  <Link to={`podcast/${episode.id}`}>{episode.title}</Link>
                   
                   <p>{episode.members}</p>
                   <span>{episode.published_at}</span>
@@ -97,7 +98,7 @@ export const Dashboard: React.FC = () => {
                     />
                   </td>
                   <td>
-                    {episode.title}
+                    <Link to={`podcast/${episode.id}`}>{episode.title}</Link>
                   </td>
                   <td className="disabledWidth">{episode.members}</td>
                   <td className="disabledWidth2">{episode.file.duration}</td>

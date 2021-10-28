@@ -50,10 +50,18 @@ export const LatestEpisodes = styled.div`
       width: 100%;
       margin-left: 1rem;
 
-      h3 {
-        font-size: 1rem;
+      a {
+        display: inline-block;
+        color: var(--heading);
+        font-size: 1.1rem;
         line-height: 1.2rem;
-        margin-bottom: 01rem;
+        margin-bottom: 1rem;
+
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
           
       p {
@@ -184,15 +192,16 @@ export const AllEpisodes = styled.section`
       }
 
       a {
-        color: var(--gray-800);
-        font-family: Lexend, sans-serif;
-        font-weight: 600;
+        display: inline-block;
+        color: var(--heading);
+        font-size: 1.1rem;
+        line-height: 1.2rem;
+        margin-bottom: 1rem;
+
         text-decoration: none;
-        line-height: 1.4rem;
-        font-size: 1rem;
 
         &:hover {
-            text-decoration: underline;
+          text-decoration: underline;
         }
       }
 
