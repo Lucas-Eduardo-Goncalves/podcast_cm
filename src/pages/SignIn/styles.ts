@@ -96,8 +96,7 @@ export const Main = styled.main`
 
     height: 100%;
     width: 100%;
-
-    min-width: 450px;
+    
     max-width: 450px;
 
     > div {
