@@ -39,8 +39,8 @@ export const DropDown: React.FC = () => {
         <ul>
           {user !== undefined ? (
             <>
+            <li onClick={() => history.push('/home')}>Home</li>
             <li onClick={() => history.push('/myprofile')}>Meu Perfil</li>
-            {/* <li>Trips</li> */}
             <li className="logout" onClick={signOut}>Logout</li>
             </>
           ) : (
