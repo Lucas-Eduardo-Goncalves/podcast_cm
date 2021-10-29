@@ -35,6 +35,7 @@ export const AreaLimiter = styled.main`
   }
 
   @media(max-width: 500px) {
+    justify-content: space-between;
     span {
       display: none;
     }

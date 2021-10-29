@@ -6,6 +6,7 @@ import ptBR from 'date-fns/locale/pt-BR';
 import { useLocation } from 'react-router-dom';
 
 import logo from '../../assets/logo.svg'
+import { DropDown } from '../DropDown';
 
 import { Container, AreaLimiter, Logo, TextHeader } from './styles';
 
@@ -32,6 +33,8 @@ export const Header: React.FC = () => {
         </TextHeader>
 
         <span>{currentDate}</span>
+
+        <DropDown />
       </AreaLimiter>
     </Container>
     )}

@@ -36,8 +36,8 @@ export const Center = styled.main`
       transition: all 0.2s;
 
       width: 100%;
-      width: 2.5rem;
-      height: 2rem;
+      width: 3rem;
+      height: 2.25rem;
 
       border: none;
       border-radius: 0.5rem;
