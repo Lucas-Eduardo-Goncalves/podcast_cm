@@ -79,7 +79,7 @@ export const Dashboard: React.FC = () => {
             <tr>
               <th></th>
               <th>Podcast</th>
-              <th className="disabledWidth">Integrantes</th>
+              <th className="disabledWidth">Integrante(s)</th>
               
               <th className="disabledWidth2">Duração</th>
               <th></th>
@@ -101,7 +101,7 @@ export const Dashboard: React.FC = () => {
                     <Link to={`podcast/${episode.id}`}>{episode.title}</Link>
                   </td>
                   <td className="disabledWidth">{episode.members}</td>
-                  <td className="disabledWidth2">{episode.file.duration}</td>
+                  <td className="disabledWidth2">{convertDurationToTimeString(episode.file.duration)}</td>
                   <td>
                     <button type="button" onClick={() => episodesArray &&  playList(episodesArray, index + 2)}>
                       {isPlaying ? (

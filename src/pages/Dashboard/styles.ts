@@ -29,6 +29,7 @@ export const Container = styled.div`
 export const LatestEpisodes = styled.div`
   display: flex;
   align-items: center;
+  /* flex-direction: row-reverse; */
   gap: 1rem;
 
   > div {
