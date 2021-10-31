@@ -1,6 +1,10 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Container = styled.header`
+interface ContainerProps {
+  isNotMaxWidth: boolean;
+}
+
+export const Container = styled.header<ContainerProps>`
   width: 100%;
   max-width: calc(100vw - 20rem);
   height: 6rem;
@@ -11,6 +15,10 @@ export const Container = styled.header`
   padding: 2rem 4rem;
 
   border-bottom: 1px solid var(--line);
+
+  ${props => props.isNotMaxWidth && css`
+    max-width: unset;
+  `}
 
   @media(max-width: 900px) {
     max-width: unset;

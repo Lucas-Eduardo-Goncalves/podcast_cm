@@ -1,3 +1,4 @@
+import { shade } from 'polished';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -42,7 +43,7 @@ export const Container = styled.div`
       &:last-child {
         border-radius: 0 0 0.5rem 0.5rem;
       }
-      
+
       &:hover {
         background-color: var(--blue);
         color: #fff;
@@ -50,15 +51,16 @@ export const Container = styled.div`
 
       &.logout {
         color: red;
-
+        
         &:hover {
           background-color: red;
           color: #fff;
         }
       }
-
+      
       &.login {
         color: green;
+        border-radius: 0.5rem;
 
         &:hover {
           background-color: green;
@@ -69,39 +71,29 @@ export const Container = styled.div`
   }
 
   .menu-trigger {
-    margin-left: 1rem;
-    background: var(--blue);
-    color: #fff;
-    border-radius: 1rem;
-    cursor: pointer;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 4px 6px;
+    justify-content: center;
+
+    background: transparent;
+    color: #fff;
+    
     border: none;
-    vertical-align: middle;
-    transition: box-shadow 0.2s ease;
+    border-radius: 0.5rem;
+    
+    transition: all 0.2s;
+    
+    margin-left: 1rem;
+    height: 2.5rem;
+    width: 2.5rem;
 
-    span {
-      font-weight: 700;
-      vertical-align: middle;
-      font-size: 14px;
-      margin: 0 10px;
-
-      width: 3rem;
-      max-width: 3rem;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    img {
-      border-radius: 90px;
-      max-width: 1.5rem;
+    svg {
+      font-size: 1.5rem;
+      color: var(--textLight);
     }
 
     &:hover {
-      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+      background: ${shade(0.1, '#F7F8FA')};
     }
   }
 `;

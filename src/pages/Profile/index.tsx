@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 import { useAuth } from '../../hooks/useAuth';
 
-import { Container, Hero } from './styles';
+import { Container, Hero, AreaButtons } from './styles';
 
 interface admins {
   name: string;
@@ -26,7 +26,7 @@ export const Profile: React.FC = () => {
     }
 
     if(user) {
-      const adminReturn = idAdmins?.find(adminId => adminId.idUser === user.id);
+      const adminReturn = idAdmins?.find(adminId => String(adminId.idUser) === String(user.id));
 
       if(adminReturn) {
         setIsAdmin(true)
@@ -39,7 +39,6 @@ export const Profile: React.FC = () => {
   return (
     <Container>
       <Hero>
-        <div className="userLeft">
           <img src={user?.avatar} alt={user?.name} />
 
           <section>
@@ -51,20 +50,31 @@ export const Profile: React.FC = () => {
             <h3>Id: </h3>
             <p>{user?.id}</p>
           </section>
-        </div>
 
-        {isAdmin && (
-          <div className="admin">
-            <p>Admin</p>
-          </div>
-        )}
-        
-        {!isAdmin && (
-          <div className="user">
-            <p>Usuário</p>
-          </div>
-        )}
+          <section>
+            <h3>Permissão:</h3>
+
+            {isAdmin && (
+              <p className="admin">
+                Admin
+              </p>
+            )}
+
+            {!isAdmin && (
+              <p className="user">
+                Usuário
+              </p>
+            )}
+          </section>
       </Hero>
+
+      {isAdmin && (
+        <AreaButtons>
+          <button onClick={() => history.push("/myprofile/users")} >Controle de usuários</button>
+          <button>Adicionar podcast</button>
+          <button disabled>Em breve...</button>
+        </AreaButtons>
+      )}
     </Container>
   );
 }

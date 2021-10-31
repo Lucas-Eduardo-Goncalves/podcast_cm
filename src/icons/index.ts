@@ -1,4 +1,4 @@
-import { FaRandom, FaGoogle, FaFacebookF } from 'react-icons/fa';
+import { FaRandom, FaGoogle, FaFacebookF, FaTrashAlt } from 'react-icons/fa';
 import { BsFillSkipEndFill, BsFillSkipStartFill, BsChevronLeft, BsFillPlayFill, BsPauseFill, BsChevronDown, BsChevronUp, BsChevronRight } from 'react-icons/bs';
 import { TiArrowLoop } from 'react-icons/ti';
 import { BiMenu } from 'react-icons/bi';
@@ -16,5 +16,6 @@ export {
   FaFacebookF as Facebook,
   BsChevronRight as ChevronRight,
   BsChevronLeft as ChevronLeft,
-  BiMenu as Menu
+  BiMenu as Menu,
+  FaTrashAlt as Trash
 }

@@ -4,6 +4,8 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 import { Container, Overlay } from './styles';
 
+import * as Icons from '../../icons';
+
 export const DropDown: React.FC = () => {
   const dropdownRef = React.useRef(null);
   const [isActive, setIsActive] = React.useState(false);
@@ -23,18 +25,10 @@ export const DropDown: React.FC = () => {
     {isActive && <Overlay onClick={onClick}/>}
 
     <Container>
-      {user !== undefined ? (
-        <button onClick={onClick} className="menu-trigger">
-          <span>{user.name}</span>
-          <img src={user.avatar} alt={user.name} />
-        </button>
-      ) : (
-        <button onClick={onClick} className="menu-trigger">
-          <span>undefined</span>
-          <img src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/df/df7789f313571604c0e4fb82154f7ee93d9989c6.jpg" alt="User avatar" />
-        </button>
-      )}
-      
+      <button onClick={onClick} className="menu-trigger">
+        <Icons.Menu />
+      </button>
+
       <nav ref={dropdownRef} className={`menu ${isActive ? 'active' : 'inactive'}`}>
         <ul>
           {user !== undefined ? (

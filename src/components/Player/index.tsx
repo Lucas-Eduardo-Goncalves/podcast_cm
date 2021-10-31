@@ -85,7 +85,7 @@ export const Player: React.FC = () => {
 
   return (
     <>
-    {location.pathname !== '/' && (
+    {location.pathname !== '/' && !location.pathname.startsWith('/myprofile') && (
       <>
       { episode && (
         <audio 

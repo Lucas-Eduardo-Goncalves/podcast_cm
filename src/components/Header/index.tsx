@@ -18,10 +18,12 @@ export const Header: React.FC = () => {
 
   const location = useLocation();
 
+  const isNotMaxWidth = location.pathname.startsWith('/myprofile');
+
   return (
     <>
     {location.pathname !== '/' && (
-      <Container>
+      <Container isNotMaxWidth={isNotMaxWidth}>
       <AreaLimiter>
         <Logo>
           <img src={logo} alt="Pocketcast" />   
@@ -33,7 +35,7 @@ export const Header: React.FC = () => {
         </TextHeader>
 
         <span>{currentDate}</span>
-
+        
         <DropDown />
       </AreaLimiter>
     </Container>

@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  display: flex;
   height: calc(100vh - 6rem);
   overflow-y: scroll;
-  max-width: calc(100vw - 20rem);
 
   @media(max-width: 900px) {
     width: 100%;
@@ -13,57 +13,80 @@ export const Container = styled.div`
 
 export const Hero = styled.section`
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 2rem;
+  flex-direction: column;
+  
+  padding: 1rem;
 
   width: 100%;
   height: 14rem;
 
-  background: linear-gradient(to bottom right, var(--blueLight), var(--blueDark));
+  background: linear-gradient(to right, var(--blueLight), var(--blueDark));
 
-  .userLeft{
-    height: 100%;
 
+  img {
+    max-width: 5rem;
+    margin-bottom: auto;
+    border-radius: 50%;
+  }
+
+  section {
     display: flex;
-    flex-direction: column;
+    align-items: center; 
     gap: 0.5rem;
 
-    img {
-      max-width: 5rem;
-      margin-bottom: auto;
-      border-radius: 50%;
+    h3 {
+      color: #fff;
     }
-
-    section {
-      display: flex;
-      align-items: center; 
-      gap: 0.5rem;
-
-      h3 {
-        color: #fff;
-      }
-
-      p {
-        color: #fff;
-      }
-    }
-  }
-
-  .admin {
-    display: flex;
-    height: 100%;
 
     p {
-      color: red;
+      color: #fff;
     }
   }
+`;
 
-  .user {
-    display: flex;
+export const AreaButtons = styled.div`
+  width: 25rem;
+  height: 14rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  button {
+    display: block;
+    position: relative;
+    
+    border: 0;
     height: 100%;
+    
+    background: transparent;
+    color: var(--text);
+    font-weight: 600;
 
-    p {
+    transition: all 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+
+    &:hover:before {
+      left: 0%;
+      right: auto;
+      width: 100%;
+    }
+
+    &:before {
+      display: block;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      height: 100%;
+      width: 0px;
+      z-index: -1;
+      content: '';
+      color: #fff;
+      background: linear-gradient(to right, var(--blueDark), var(--blue));
+      transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+    }
+
+    &:hover {
       color: #fff;
     }
   }
