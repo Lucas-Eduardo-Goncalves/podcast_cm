@@ -25,10 +25,10 @@ export const Profile: React.FC = () => {
       history.push('/home');
     }
 
-    if(user) {
-      const adminReturn = idAdmins?.find(adminId => String(adminId.idUser) === String(user.id));
+    if(user && idAdmins) {
+      const adminReturn = idAdmins.findIndex(adminId => adminId.idUser.trim() === user.id.trim());
 
-      if(adminReturn) {
+      if(adminReturn >= 0) {
         setIsAdmin(true)
       } else {
         setIsAdmin(false)

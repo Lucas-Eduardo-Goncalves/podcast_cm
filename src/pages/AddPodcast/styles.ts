@@ -19,6 +19,9 @@ export const Container = styled.form`
       align-items: center;
       justify-content: space-evenly;
 
+      flex-wrap: wrap;
+      gap: 0.5rem;
+
       padding: 1rem;
 
       img {

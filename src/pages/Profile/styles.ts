@@ -5,9 +5,8 @@ export const Container = styled.div`
   height: calc(100vh - 6rem);
   overflow-y: scroll;
 
-  @media(max-width: 900px) {
-    width: 100%;
-    max-width: unset;
+  @media(max-width: 600px) {
+    flex-wrap: wrap;
   }
 `;
 
@@ -88,6 +87,16 @@ export const AreaButtons = styled.div`
 
     &:hover {
       color: #fff;
+    }
+  }
+
+  @media(max-width: 600px) {
+    width: 100%;
+    height: calc(100% - 14rem);
+
+
+    button {
+      max-height: 6rem;
     }
   }
 `;

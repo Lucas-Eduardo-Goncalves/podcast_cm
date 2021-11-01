@@ -4,9 +4,11 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   max-width: calc(100vw - 20rem);
+  height: calc(100vh - 6rem);
   padding: 3rem 2rem;
   display: flex;
   justify-content: center;
+  overflow: auto;
 
   @media(max-width: 900px) {
     max-width: unset;
@@ -91,6 +93,8 @@ export const Description = styled.div`
   margin-top: 2rem;
   line-height: 1.675rem;
   color: var(--text);
+
+  padding: 1rem;
 
   p {
       margin: 1.5rem 0;

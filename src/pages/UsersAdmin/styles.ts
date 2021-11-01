@@ -4,17 +4,15 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.5rem;
 
-  margin: 1rem;
-  width: 100%;
   height: calc(100vh - 6rem);
   overflow-y: scroll;
 
   main {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
+    margin: 1rem;
 
     h3 {
       margin-bottom: 1.5rem;
@@ -72,6 +70,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    margin: 1rem;
 
     h3 {
       margin-bottom: 1rem;

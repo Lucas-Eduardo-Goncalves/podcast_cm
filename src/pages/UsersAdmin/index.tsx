@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
 import { Container, BackButton } from './styles';
-import { ChevronLeft, Trash } from '../../icons';
+import { ChevronLeft } from '../../icons';
 import { useCollection } from '@nandorojo/swr-firestore';
 import { firestore } from '../../services/firebase';
 import { useHistory } from 'react-router';
@@ -39,14 +39,6 @@ export const UsersAdmin: React.FC = () => {
     }
   },[user, history, idAdmins]);
 
-  function deleteDoc(id: string) {
-    firestore.collection('admins').doc(id).delete().then(() => {
-      console.log("Document successfully deleted!");
-    }).catch((error) => {
-      console.error("Error removing document: ", error);
-    });
-  }
-
   const onSubmit: SubmitHandler<userAdminProps> = data => {
     data.idUser = data.idUser.trim();
     
@@ -70,10 +62,6 @@ export const UsersAdmin: React.FC = () => {
             <div key={user.id}>
               <p>Nome: <span>{user.name}</span></p>
               <p>ID: <span>{user.idUser}</span></p>
-
-              <button onClick={() => deleteDoc(user.id)}>
-                <Trash />
-              </button>
             </div>
           ))}
         </main>

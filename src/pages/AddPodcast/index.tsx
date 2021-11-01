@@ -90,7 +90,7 @@ export const AddPodcast: React.FC = () => {
 
         <h2>Adicionar podcast</h2>
 
-        <Divider />
+        {/* <Divider /> */}
 
         <section className="areaImages">
           <h3>Escolha uma imagem</h3>
