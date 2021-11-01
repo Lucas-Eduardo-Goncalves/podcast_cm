@@ -49,6 +49,8 @@ export const UsersAdmin: React.FC = () => {
   }
 
   const onSubmit: SubmitHandler<userAdminProps> = data => {
+    data.idUser = data.idUser.trim();
+    
     firestore.collection('admins').add(data)
     .catch((error) => {
       console.error("Error adding document: ", error);
