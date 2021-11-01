@@ -71,7 +71,7 @@ export const Profile: React.FC = () => {
       {isAdmin && (
         <AreaButtons>
           <button onClick={() => history.push("/myprofile/users")} >Controle de usuários</button>
-          <button>Adicionar podcast</button>
+          <button onClick={() => history.push("/myprofile/addpodcast")} >Adicionar podcast</button>
           <button disabled>Em breve...</button>
         </AreaButtons>
       )}

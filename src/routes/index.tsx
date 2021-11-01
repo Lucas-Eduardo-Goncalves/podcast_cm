@@ -7,6 +7,7 @@ import { UnicPodcast } from '../pages/UnicPodcast';
 
 import { Profile } from '../pages/Profile';
 import { UsersAdmin } from '../pages/UsersAdmin';
+import { AddPodcast } from '../pages/AddPodcast';
 
 
 export const Routes: React.FC = () => {
@@ -17,6 +18,7 @@ export const Routes: React.FC = () => {
 
       <Route path="/myprofile" exact component={Profile}/>
       <Route path="/myprofile/users" component={UsersAdmin}/>
+      <Route path="/myprofile/addpodcast" component={AddPodcast}/>
 
       <Route path="/podcast/:id+" component={UnicPodcast} />
     </Switch>

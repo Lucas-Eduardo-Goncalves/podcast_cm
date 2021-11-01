@@ -39,7 +39,6 @@ export const UsersAdmin: React.FC = () => {
     }
   },[user, history, idAdmins]);
 
-
   function deleteDoc(id: string) {
     firestore.collection('admins').doc(id).delete().then(() => {
       console.log("Document successfully deleted!");
