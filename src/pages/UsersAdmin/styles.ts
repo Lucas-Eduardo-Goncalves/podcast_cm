@@ -2,8 +2,9 @@ import { shade } from 'polished';
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   height: calc(100vh - 6rem);
   overflow-y: scroll;
@@ -65,31 +66,54 @@ export const Container = styled.div`
       }
     }
   }
+`;
 
-  form {
+export const ContainerForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem;
+
+  h3 {
+    margin-bottom: 1rem;
+  }
+
+  label {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    margin: 1rem;
+    font-weight: 600;
 
-    h3 {
-      margin-bottom: 1rem;
-    }
-
-    label {
-      display: flex;
-      flex-direction: column;
-      font-weight: 600;
-
-      input {
-        display: block;
-        margin-top: 0.5rem;
-        background: transparent;
-        border: none;
-        border-bottom: 1px solid var(--blue);
-      }
+    input {
+      display: block;
+      margin-top: 0.5rem;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--blue);
     }
   }
+
+  button {
+    height: 2.5rem;
+    background: var(--orange);
+
+    color: #fff;
+    font-weight: 600;
+    
+    border: none;
+    border-radius: 0.25rem;
+
+    transition: all 0.2s;
+
+    &:hover {
+      background: ${shade(0.2, '#ff6700')};
+    }
+  }
+`;
+
+export const Buttons = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 `;
 
 

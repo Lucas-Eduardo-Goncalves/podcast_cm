@@ -2,6 +2,7 @@ import { FaRandom, FaGoogle, FaFacebookF, FaTrashAlt } from 'react-icons/fa';
 import { BsFillSkipEndFill, BsFillSkipStartFill, BsChevronLeft, BsFillPlayFill, BsPauseFill, BsChevronDown, BsChevronUp, BsChevronRight } from 'react-icons/bs';
 import { TiArrowLoop } from 'react-icons/ti';
 import { BiMenu } from 'react-icons/bi';
+import { HiOutlineUserAdd } from 'react-icons/hi';
 
 export {
   FaRandom as Random,
@@ -17,5 +18,6 @@ export {
   BsChevronRight as ChevronRight,
   BsChevronLeft as ChevronLeft,
   BiMenu as Menu,
-  FaTrashAlt as Trash
+  FaTrashAlt as Trash,
+  HiOutlineUserAdd as UserAdd
 }
