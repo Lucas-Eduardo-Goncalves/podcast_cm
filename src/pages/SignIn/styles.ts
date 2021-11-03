@@ -2,10 +2,11 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
-  width: 100%;
-  height: 100%;
   align-items: stretch;
   justify-content: space-between;
+  
+  width: 100%;
+  height: 100%;
 `;
 
 export const Hero = styled.section`

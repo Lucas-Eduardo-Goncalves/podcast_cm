@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useCollection } from '@nandorojo/swr-firestore';
 
 import { usePlayer } from '../../contexts/PlayerContext';
+import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString';
+
 import { PlayingCss } from '../../components/PlayingCss';
 
-import { Container, LatestEpisodes, AllEpisodes } from './styles';
-
 import * as Icons from '../../icons';
-import { useCollection } from '@nandorojo/swr-firestore';
-import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString';
+import { Container, LatestEpisodes, AllEpisodes } from './styles';
 
 type Episode = {
   id: string,      
@@ -33,11 +33,10 @@ export const Dashboard: React.FC = () => {
   const latestEpisodes = episodesArray?.slice(0, 2);
   const allEpisodes = episodesArray?.slice(2, episodesArray?.length);
 
-  const { playList, currentEpisodeIndex, isPlaying } = usePlayer()
+  const { playList, currentEpisodeIndex, isPlaying } = usePlayer();
 
   return (
     <Container>
-        
       <h2>Últimos lançamentos</h2>
       
       <LatestEpisodes>
@@ -82,7 +81,6 @@ export const Dashboard: React.FC = () => {
               <th></th>
               <th>Podcast</th>
               <th className="disabledWidth">Integrante(s)</th>
-              
               <th className="disabledWidth2">Duração</th>
               <th></th>
             </tr>
@@ -127,4 +125,4 @@ export const Dashboard: React.FC = () => {
       </AllEpisodes>
     </Container>
   );
-}
+};

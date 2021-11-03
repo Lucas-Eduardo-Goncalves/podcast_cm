@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-
-import { Container, Hero, Main } from './styles';
+import { useHistory } from 'react-router-dom';
 
 import logo from '../../assets/logo.svg'
 
-import * as Icons from '../../icons';
 import { useAuth } from '../../hooks/useAuth';
-import { useHistory } from 'react-router-dom';
+
+import { Google, Facebook, ChevronRight } from '../../icons';
+import { Container, Hero, Main } from './styles';
 
 export const SignIn: React.FC = () => {
 
@@ -50,12 +50,12 @@ export const SignIn: React.FC = () => {
 
           <section>
             <button className="google" onClick={signInWithGoogle}>
-              <Icons.Google />
+              <Google />
               Google
             </button>
 
             <button className="facebook" onClick={signInWithFacebook}>
-              <Icons.Facebook />
+              <Facebook />
               Facebook
             </button>
           </section>
@@ -64,10 +64,10 @@ export const SignIn: React.FC = () => {
 
           <button onClick={() => history.push('/home')}>
             <p>Continue</p>
-            <Icons.ChevronRight />
+            <ChevronRight />
           </button>
         </div>
       </Main>
     </Container>
   );
-}
+};

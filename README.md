@@ -44,13 +44,10 @@
 ## Dependencias 
 
 ```
-  @coreui/coreui: ^4.0.5,
-  @coreui/react: ^4.0.0,
   @nandorojo/swr-firestore: ^0.16.0,
   @testing-library/jest-dom: ^5.11.4,
   @testing-library/react: ^11.1.0,
   @testing-library/user-event: ^12.1.10,
-  bootstrap: ^5.1.3,
   date-fns: ^2.25.0,
   firebase: 8.6.8"
   polished: ^4.1.3,
@@ -77,7 +74,6 @@
   @types/react-modal: ^3.13.1,
   @types/react-router-dom: ^5.3.2,
   @types/styled-components: ^5.1.15,
-  @types/typescript: ^2.0.0
 ```
 
 ## Rodar o projeto

@@ -1262,16 +1262,6 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@coreui/coreui@^4.0.5":
-  version "4.0.5"
-  resolved "https://registry.yarnpkg.com/@coreui/coreui/-/coreui-4.0.5.tgz#b2fd0d3ab4d0887ef42c628cbd6f1ecca3d4c62c"
-  integrity sha512-6T9ezeRUIalo4UhQ9/E4COzyFwUqEUYgJcFyuu394qtvMcdoxqSSYQL6LLs/TkaDBN5vdbdLtNDdIWe+/CWG+Q==
-
-"@coreui/react@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@coreui/react/-/react-4.0.0.tgz#fb6a955c881bad4c0f10e70656d2214eda69775b"
-  integrity sha512-FE5s9TE7MIFh1QZhlMUB5LnEqh/IiqVdmT3YQtCOLmiHzXmUH4+BdM9Xt1QaK4SI61HxIsAlXUi73F1OgTBmQw==
-
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
@@ -2400,13 +2390,6 @@
   dependencies:
     "@types/jest" "*"
 
-"@types/typescript@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@types/typescript/-/typescript-2.0.0.tgz#c433539c98bae28682b307eaa7a0fd2115b83c28"
-  integrity sha1-xDNTnJi64oaCswfqp6D9IRW4PCg=
-  dependencies:
-    typescript "*"
-
 "@types/uglify-js@*":
   version "3.12.0"
   resolved "https://registry.yarnpkg.com/@types/uglify-js/-/uglify-js-3.12.0.tgz#2bb061c269441620d46b946350c8f16d52ef37c5"
@@ -3452,11 +3435,6 @@ boolbase@^1.0.0, boolbase@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
-
-bootstrap@^5.1.3:
-  version "5.1.3"
-  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-5.1.3.tgz#ba081b0c130f810fa70900acbc1c6d3c28fa8f34"
-  integrity sha512-fcQztozJ8jToQWXxVuEyXWW+dSo8AiXWKwiSSrKWsRB/Qt+Ewwza+JWoLKiTuQLaEPhdNAJ7+Dosc9DOIqNy7Q==
 
 brace-expansion@^1.1.7:
   version "1.1.11"
@@ -12197,7 +12175,7 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@*, typescript@^4.1.2:
+typescript@^4.1.2:
   version "4.4.4"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.4.4.tgz#2cd01a1a1f160704d3101fd5a58ff0f9fcb8030c"
   integrity sha512-DqGhF5IKoBl8WNf8C1gu8q0xZSInh9j1kJJMqT3a94w1JzVaBU4EXOSMrz9yDqMT0xt3selp83fuFMQ0uzv6qA==
