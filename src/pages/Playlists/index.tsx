@@ -14,6 +14,7 @@ type Episode = {
   members: string,
   published_at: Date,
   thumbnail: string,
+  category: string,
   description: string,
   file: {
     url: string,

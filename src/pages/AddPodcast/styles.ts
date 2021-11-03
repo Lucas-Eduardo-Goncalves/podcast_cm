@@ -5,6 +5,10 @@ interface ImgProps {
   ImgSelected: boolean;
 }
 
+interface ButtonProps {
+  ButtonSelected: boolean;
+}
+
 export const Container = styled.form`
   width: 100%;
   height: calc(100vh - 6rem);
@@ -72,6 +76,16 @@ export const Container = styled.form`
       background: ${shade(0.1, '#F7F8FA')};
     }
 
+    &.category {
+
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+      }
+    }
+
     &:last-child {
       padding-bottom: 2rem;
     }
@@ -117,6 +131,21 @@ export const Img = styled.img<ImgProps>`
     cursor: pointer;
     opacity: 0.7;
   }
+`;
+
+export const Button = styled.button<ButtonProps>`
+  background: var(--blue);
+  color: #fff;
+  font-weight: bold;
+  border: 1px solid var(--blue);
+  border-radius: 0.25rem;
+  width: 10rem;
+  height: 2.5rem;
+
+  ${props => props.ButtonSelected && css`
+    /* border-color: var(--orange); */
+    color: var(--orange);
+  `}
 `;
 
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { Container, BackButton, Divider, Img } from './styles';
+import { Container, BackButton, Divider, Img, Button } from './styles';
 import { ChevronLeft } from '../../icons';
 import { useCollection } from '@nandorojo/swr-firestore';
 import { useAuth } from '../../hooks/useAuth';
@@ -18,6 +18,7 @@ type podcastProps = {
   members: string,
   published_at: string,
   thumbnail: string,
+  category: string,
   description: string,
   file: {
     url: string,
@@ -33,6 +34,7 @@ export const AddPodcast: React.FC = () => {
 
   const [imgSelected, setImgSelected] = useState('https://firebasestorage.googleapis.com/v0/b/pocketcastgs2m.appspot.com/o/images%2F2206c6a6-d75b-4c15-b625-391bc2b46aec.jfif?alt=media&token=0c363a93-c12e-418a-903b-36deb6ae0270');
   const [audio, setAudio] = useState('');
+  const [category, setCategory] = useState('4');
 
   const { data: idAdmins } = useCollection<userAdminProps>('admins', {listen: true}); 
 
@@ -60,6 +62,12 @@ export const AddPodcast: React.FC = () => {
       return;
     }
 
+    if(category === '') {
+      alert('Selecione uma categoria');
+      return;
+    }
+
+    data.category = category;
     data.file.url = audio;
 
     await firestore.collection('Podcasts').add(data)
@@ -148,6 +156,20 @@ export const AddPodcast: React.FC = () => {
           <h3>Quando que o podcast foi ou está sendo publicado?</h3>
 
           <input type="date" {...register('published_at', {required: true})}/>
+        </section>
+
+        <Divider />
+
+
+        <section className="category">
+          <h3>Qual a Categoria do audio?</h3>
+
+          <div>
+            <Button type="button" ButtonSelected={category === '4'} onClick={() => setCategory('4')}>Compilação</Button>
+            <Button type="button" ButtonSelected={category === '1'} onClick={() => setCategory('1')}>Momento Piada</Button>
+            <Button type="button" ButtonSelected={category === '3'} onClick={() => setCategory('3')}>PocketCast</Button>
+            <Button type="button" ButtonSelected={category === '2'} onClick={() => setCategory('2')}>Youcat</Button>
+          </div>
         </section>
 
         <Divider />
