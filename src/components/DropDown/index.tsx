@@ -35,6 +35,7 @@ export const DropDown: React.FC = () => {
             <>
             <li onClick={() => history.push('/home')}>Home</li>
             <li onClick={() => history.push('/myprofile')}>Meu Perfil</li>
+            <li onClick={() => history.push('/playlists')}>Playlists</li>
             <li className="logout" onClick={signOut}>Logout</li>
             </>
           ) : (

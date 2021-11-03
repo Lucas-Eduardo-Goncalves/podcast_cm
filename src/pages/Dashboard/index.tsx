@@ -27,7 +27,9 @@ type Episode = {
 export const Dashboard: React.FC = () => {
 
   const { data: episodesArray } = useCollection<Episode>('Podcasts', {
-    listen: true, orderBy: ['published_at', 'desc']
+    listen: true, 
+    orderBy: ['published_at', 'desc'],
+    // where: ['category', '==', '1'],
   }); 
 
   const latestEpisodes = episodesArray?.slice(0, 2);

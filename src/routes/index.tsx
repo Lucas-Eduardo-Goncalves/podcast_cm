@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import { SignIn } from '../pages/SignIn';
 import { Dashboard } from '../pages/Dashboard';
+import { Playlists } from '../pages/Playlists';
 import { UnicPodcast } from '../pages/UnicPodcast';
 
 import { Profile } from '../pages/Profile';
@@ -15,6 +16,7 @@ export const Routes: React.FC = () => {
     <Switch>
       <Route path="/" component={SignIn} exact/>
       <Route path="/home" component={Dashboard}/>
+      <Route path="/playlists" component={Playlists}/>
 
       <Route path="/myprofile" exact component={Profile}/>
       <Route path="/myprofile/users" component={UsersAdmin}/>
