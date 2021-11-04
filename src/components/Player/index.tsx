@@ -180,9 +180,9 @@ export const Player: React.FC = () => {
                   max={episode.file.duration}
                   value={progress}
                   onChange={handleSeek}
-                  trackStyle={{ backgroundColor: '#ff6700' }}
-                  railStyle={{ backgroundColor: '#1976d2' }}
-                  handleStyle={{ borderColor: '#ff6700', borderWidth: 4 }}
+                  trackStyle={{ backgroundColor: '#ff002b' }}
+                  railStyle={{ backgroundColor: '#004e89' }}
+                  handleStyle={{ borderColor: '#ff002b', borderWidth: 4 }}
                 />
               ) : (
                 <div className='emptySlider' />
@@ -272,9 +272,9 @@ export const Player: React.FC = () => {
                   max={episode.file.duration}
                   value={progress}
                   onChange={handleSeek}
-                  trackStyle={{ backgroundColor: '#ff6700' }}
-                  railStyle={{ backgroundColor: '#1976d2' }}
-                  handleStyle={{ borderColor: '#ff6700', borderWidth: 4 }}
+                  trackStyle={{ backgroundColor: '#ff002b' }}
+                  railStyle={{ backgroundColor: '#004e89' }}
+                  handleStyle={{ borderColor: '#ff002b', borderWidth: 4 }}
                 />
               ) : (
                 <div className='emptySlider' />

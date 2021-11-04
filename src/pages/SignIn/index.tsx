@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import logo from '../../assets/logo.svg'
+import logo from '../../assets/logoDark.svg'
 
 import { useAuth } from '../../hooks/useAuth';
 
@@ -26,7 +26,7 @@ export const SignIn: React.FC = () => {
         <header>
           <img src={logo} alt="PocketCast" />
 
-          <h1>PocketCast <span>G❤️M</span></h1>
+          {/* <h1>PocketCast <span>G❤️M</span></h1> */}
         </header>
 
         <section>

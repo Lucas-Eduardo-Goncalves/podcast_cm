@@ -94,7 +94,7 @@ export const ContainerForm = styled.form`
 
   button {
     height: 2.5rem;
-    background: var(--orange);
+    background: #ff002b;
 
     color: #fff;
     font-weight: 600;
@@ -105,7 +105,7 @@ export const ContainerForm = styled.form`
     transition: all 0.2s;
 
     &:hover {
-      background: ${shade(0.2, '#ff6700')};
+      background: ${shade(0.2, '#ff002b')};
     }
   }
 `;

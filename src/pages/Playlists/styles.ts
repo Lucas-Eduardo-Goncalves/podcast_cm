@@ -50,7 +50,7 @@ export const Img = styled.img<ImgProps>`
   transition: all 0.2s;
 
   ${props => props.ImgSelected && css`
-    border: 2px solid var(--orange);
+    border: 2px solid #ff002b;
   `}
 
   &:hover {
@@ -109,18 +109,18 @@ export const Episodes = styled.section`
         transition: all 0.2s;
 
         width: 2rem;
-        height: 1.5rem;
+        height: 2rem;
 
         border: none;
-        border-radius: 0.5rem;
+        border-radius: 50%;
 
-        background: var(--orange);
+        background: #ff002b;
         color: #fff;
 
         font-size: 1.30rem;
 
         &:hover {
-          background: ${lighten(0.2, '#ff6700')};
+          background: ${lighten(0.2, '#ff002b')};
           opacity: 0.8;
         }
       }

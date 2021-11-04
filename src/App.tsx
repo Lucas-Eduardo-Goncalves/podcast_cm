@@ -1,4 +1,5 @@
 import React from 'react';
+import Modal from 'react-modal';
 import GlobalStyle from './styles';
 import { BrowserRouter } from 'react-router-dom';
 
@@ -13,6 +14,8 @@ import { firebaseConfig } from './services/firebase';
 import { AuthContextProvider } from './hooks/useAuth';
 
 import { Routes } from './routes';
+
+Modal.setAppElement('#root');
 
 export const App: React.FC = () => {
 

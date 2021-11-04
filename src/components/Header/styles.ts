@@ -12,7 +12,7 @@ export const Container = styled.header<ContainerProps>`
   display: flex;
   justify-content: center;
 
-  padding: 2rem 4rem;
+  padding: 0.5rem 4rem;
 
   border-bottom: 1px solid var(--line);
 
@@ -60,8 +60,8 @@ export const Logo = styled.div`
   width: min-content;
 
   img {
-    max-width: 3rem;
-    max-height: 3rem;
+    /* max-width: 3rem; */
+    max-height: 6rem;
   }
 
   h1 {
@@ -70,7 +70,6 @@ export const Logo = styled.div`
 
   @media(max-width: 600px) {
     img {
-      max-width: 2rem;
       max-height: 2rem;
     }
 

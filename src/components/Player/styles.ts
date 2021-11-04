@@ -8,7 +8,7 @@ export const ContainerLittle = styled.div`
   height: 5rem;
   gap: 0.5rem;
 
-  background: var(--blue);
+  background: #002962;
   color: #fff;
 
   .button {
@@ -28,7 +28,8 @@ export const ContainerLittle = styled.div`
     border-radius: 0.5rem;
 
     &:hover {
-      background: ${lighten(0.2 ,'#1565c0')};
+      background: ${lighten(0.2 ,'#002962')};
+      /* linear-gradient(to bottom right, #004e89, #00043a) */
     }
   }
 
@@ -60,7 +61,7 @@ export const Container = styled.div`
   min-width: 20rem;
   height: 100%;
 
-  background: var(--blue);
+  background: #002962;
   color: #fff;
 
   .button {
@@ -84,7 +85,7 @@ export const Container = styled.div`
     border-radius: 0.5rem;
 
     &:hover {
-      background: ${lighten(0.2 ,'#1565c0')};
+      background: ${lighten(0.2 ,'#002962')};
     }
   }
 
@@ -93,7 +94,7 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(to bottom right, var(--blueLight), transparent);
+    background: linear-gradient(to bottom right, #004e89, transparent);
 
     margin-top: 3rem;
     padding: 1rem;
@@ -175,7 +176,7 @@ export const Progress = styled.div`
     .emptySlider {
       width: 100%;
       height: 4px;
-      background: var(--purple-300);
+      background: #002962;
       border-radius: 2px;
     }
   }
@@ -218,7 +219,7 @@ export const ButtonSecondary = styled.button`
   align-items: center;
   justify-content: center;
 
-  background: var(--blue);
+  background: #002962;
   transition: all 0.2s;
 
   width: 2.5rem;
@@ -233,12 +234,12 @@ export const ButtonSecondary = styled.button`
   color: #fff;
 
   &.isActive {
-    color: var(--orange);
+    color: #ff002b;
   }
 
   &:hover {
     opacity: 0.8;
-    background: ${lighten(0.1, '#1565c0')};
+    background: ${lighten(0.1, '#002962')};
   }
 `;
 
@@ -247,7 +248,7 @@ export const ButtonMain = styled.button`
   align-items: center;
   justify-content: center;
 
-  background: var(--blueLight);
+  background: #004e89;
   transition: all 0.2s;
 
   width: 3rem;
@@ -263,6 +264,6 @@ export const ButtonMain = styled.button`
 
   &:hover {
     opacity: 0.8;
-    background: ${lighten(0.2, '#1976d2')};
+    background: ${lighten(0.1, '#004e89')};
   }
 `;

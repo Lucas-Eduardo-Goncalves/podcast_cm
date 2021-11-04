@@ -20,7 +20,7 @@ export const Hero = styled.section`
   width: 100%;
   height: 14rem;
 
-  background: linear-gradient(to right, var(--blueLight), var(--blueDark));
+  background: linear-gradient(to right, #004e89, #00043a);
 
 
   img {
@@ -81,7 +81,7 @@ export const AreaButtons = styled.div`
       z-index: -1;
       content: '';
       color: #fff;
-      background: linear-gradient(to right, var(--blueDark), var(--blue));
+      background: linear-gradient(to right, #00043a, #004e89);
       transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
     }
 

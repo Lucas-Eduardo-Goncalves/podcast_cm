@@ -29,7 +29,6 @@ export const Container = styled.div`
 export const LatestEpisodes = styled.div`
   display: flex;
   align-items: center;
-  /* flex-direction: row-reverse; */
   gap: 1rem;
 
   > div {
@@ -105,19 +104,20 @@ export const LatestEpisodes = styled.div`
 
       transition: all 0.2s;
 
-      width: 2.5rem;
-      height: 2rem;
+      min-width: 2.5rem;
+      min-height: 2.5rem;
+      padding: 0.40rem;
 
       border: none;
-      border-radius: 0.5rem;
+      border-radius: 50%;
 
-      background: var(--orange);
+      background: #FF002B;
       color: #fff;
 
       font-size: 1.30rem;
 
       &:hover {
-        background: ${lighten(0.2, '#ff6700')};
+        background: ${lighten(0.2, '#FF002B')};
         opacity: 0.8;
       }
     }
@@ -213,19 +213,19 @@ export const AllEpisodes = styled.section`
 
         transition: all 0.2s;
 
-        width: 2rem;
-        height: 1.5rem;
+        width: 1.75rem;
+        height: 1.75rem;
 
         border: none;
-        border-radius: 0.5rem;
+        border-radius: 50%;
 
-        background: var(--orange);
+        background: #FF002B;
         color: #fff;
 
-        font-size: 1.30rem;
+        font-size: 1.10rem;
 
         &:hover {
-          background: ${lighten(0.2, '#ff6700')};
+          background: ${lighten(0.2, '#FF002B')};
           opacity: 0.8;
         }
       }

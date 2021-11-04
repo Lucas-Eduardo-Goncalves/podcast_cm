@@ -11,7 +11,7 @@ export const Container = styled.div`
 
 export const Hero = styled.section`
   flex: 1;
-  background: linear-gradient(to bottom right, var(--blueLight), var(--blueDark));
+  background: linear-gradient(to bottom right, #004e89, #00043a);
   padding: 2rem;
 
   display: flex;
@@ -23,17 +23,7 @@ export const Hero = styled.section`
     align-items: center;
 
     img {
-      width: 4rem;
-    }
-
-    h1 {
-      font-size: 2rem;
-      margin-left: 2rem;
-      color: #fff;
-
-      span {
-        margin-left: 2rem;
-      }
+      height: 3.5rem;
     }
   }
 

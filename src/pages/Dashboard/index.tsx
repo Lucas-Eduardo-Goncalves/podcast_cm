@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCollection } from '@nandorojo/swr-firestore';
 
+import { format } from 'date-fns';
+
 import { usePlayer } from '../../contexts/PlayerContext';
 import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString';
 
@@ -53,7 +55,7 @@ export const Dashboard: React.FC = () => {
                   <Link to={`podcast/${episode.id}`}>{episode.title}</Link>
                   
                   <p>{episode.members}</p>
-                  <span>{episode.published_at}</span>
+                  <span>{format(new Date(episode.published_at), 'dd/MM/yyyy')}</span>
                   <span>{convertDurationToTimeString(episode.file.duration)}</span>
                 </div>
 

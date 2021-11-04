@@ -101,7 +101,7 @@ export const Container = styled.form`
     button {
       width: 10rem;
       height: 2rem;
-      background: var(--orange);
+      background: #ff002b;
 
       color: #fff;
       font-weight: 600;
@@ -112,7 +112,7 @@ export const Container = styled.form`
       transition: all 0.2s;
 
       &:hover {
-        background: ${shade(0.2, '#ff6700')};
+        background: ${shade(0.2, '#ff002b')};
       }
     }
   }
@@ -124,7 +124,7 @@ export const Img = styled.img<ImgProps>`
   transition: all 0.2s;
 
   ${props => props.ImgSelected && css`
-    border: 2px solid var(--orange);
+    border: 2px solid #ff002b;
   `}
 
   &:hover {
@@ -134,17 +134,17 @@ export const Img = styled.img<ImgProps>`
 `;
 
 export const Button = styled.button<ButtonProps>`
-  background: var(--blue);
+  background: #002962;
   color: #fff;
   font-weight: bold;
-  border: 1px solid var(--blue);
+  border: none;
+  transition: all 0.2s;
   border-radius: 0.25rem;
   width: 10rem;
   height: 2.5rem;
 
   ${props => props.ButtonSelected && css`
-    /* border-color: var(--orange); */
-    color: var(--orange);
+    background: #ff002b;
   `}
 `;
 

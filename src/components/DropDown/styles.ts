@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   position: relative;
+  margin-left: auto;
 
   .menu {
     background: #fff;
@@ -45,7 +46,7 @@ export const Container = styled.div`
       }
 
       &:hover {
-        background-color: var(--blue);
+        background-color: #002962;
         color: #fff;
       }
 
@@ -77,6 +78,7 @@ export const Container = styled.div`
 
     background: transparent;
     color: #fff;
+    margin-left: auto;
     
     border: none;
     border-radius: 0.5rem;
