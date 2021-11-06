@@ -8,6 +8,8 @@ import { useAuth } from '../../hooks/useAuth';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { firestore, storage } from '../../services/firebase';
 
+import { ProgressBar } from '../../components/ProgressBar';
+
 interface userAdminProps {
   idUser: string;
   name: string;
@@ -33,8 +35,11 @@ export const AddPodcast: React.FC = () => {
   const { user } = useAuth();
 
   const [imgSelected, setImgSelected] = useState('https://firebasestorage.googleapis.com/v0/b/pocketcastgs2m.appspot.com/o/images%2F2206c6a6-d75b-4c15-b625-391bc2b46aec.jfif?alt=media&token=0c363a93-c12e-418a-903b-36deb6ae0270');
-  const [audio, setAudio] = useState('');
   const [category, setCategory] = useState('4');
+  
+  const [progress, setProgress] = useState(0);
+  const [audioSelected, setAudioSelected] = useState('');
+  const [audio, setAudio] = useState('');
 
   const { data: idAdmins } = useCollection<userAdminProps>('admins', {listen: true}); 
 
@@ -79,14 +84,32 @@ export const AddPodcast: React.FC = () => {
   };
 
   const handleAudio = async (e: any) => {
-    if(e.target.files[0]){
-      const uploadTask = await storage.ref(`audios/${Date.now()}`).put(e.target.files[0]);
+    if(audioSelected !== '') {
+      var desertRef = storage.ref().child(audioSelected);
 
-      uploadTask.ref.getDownloadURL().then(function(downloadURL) {
-        setAudio(downloadURL)
-      })
+      await desertRef.delete();
+
+      setAudioSelected('');
     }
-  }
+
+    if(e.target.files[0]){
+      const uploadTask = storage.ref(`audios/${Date.now()}`).put(e.target.files[0]);
+      
+      uploadTask.on('state_changed', function(snapshot){
+        var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        setProgress(progress);
+
+      }, function(error) {
+        alert('error');
+
+      }, function() {
+          uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+            setAudioSelected(uploadTask.snapshot.ref.fullPath);
+            setAudio(downloadURL);
+        });
+      });
+    };
+  };
 
   return (
     <>
@@ -97,8 +120,6 @@ export const AddPodcast: React.FC = () => {
       <Container onSubmit={handleSubmit(onSubmit)}>
 
         <h2>Adicionar podcast</h2>
-
-        {/* <Divider /> */}
 
         <section className="areaImages">
           <h3>Escolha uma imagem</h3>
@@ -199,10 +220,16 @@ export const AddPodcast: React.FC = () => {
 
         <Divider />
 
-        <section>
+        <section className="addPodcast">
           <h3>Adicione o audio</h3>
 
-          <input type="file" onChange={handleAudio}/>
+          <div>
+            <input type="file" onChange={handleAudio}/>
+
+            {progress !== 0 && (
+              <ProgressBar progress={progress}/>
+            )}
+          </div>
         </section>
 
         <div>

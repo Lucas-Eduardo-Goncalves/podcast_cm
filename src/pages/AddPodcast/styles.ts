@@ -83,11 +83,28 @@ export const Container = styled.form`
         align-items: center;
         justify-content: space-evenly;
         flex-wrap: wrap;
+        gap: 1rem;
       }
     }
 
     &:last-child {
       padding-bottom: 2rem;
+    }
+
+    &.addPodcast {
+      div {
+        display: flex;
+        align-items: center;
+        max-height: 4rem;
+        border-radius: 0.5rem;
+        background: ${shade(0.1, '#F7F8FA')};
+        
+        input {
+          width: unset;
+          background-color: none;
+          
+        }
+      }
     }
   }
 

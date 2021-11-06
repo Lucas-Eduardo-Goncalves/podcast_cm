@@ -7,7 +7,7 @@ interface ContainerProps {
 export const Container = styled.header<ContainerProps>`
   width: 100%;
   max-width: calc(100vw - 20rem);
-  height: 6rem;
+  min-height: 6rem;
 
   display: flex;
   justify-content: center;
